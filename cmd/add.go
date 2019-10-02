@@ -44,6 +44,4 @@ to quickly create a Cobra application.`,
 
 func init() {
 	configCmd.AddCommand(addCmd)
-	addCmd.Flags().StringP("key", "k", "default-key", "The key for the key value set to add to the configuration.")
-	addCmd.Flags().StringP("value", "v", "default-value", "The value for the key value set to add to the configuration.")
 }

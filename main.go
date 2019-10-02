@@ -15,7 +15,7 @@ limitations under the License.
 */
 package main
 
-import "github.com/adron/cobra-cli-samples/cmd"
+import "github.com/Adron/cobra-cli-samples/cmd"
 
 func main() {
   cmd.Execute()

@@ -55,10 +55,10 @@ func initConfig() {
 
   viper.AutomaticEnv()
   viper.SetEnvPrefix("COBRACLISAMPLES")
-  helper.Check(viper.BindEnv("api_key"))
-  helper.Check(viper.BindEnv("api_secret"))
-  helper.Check(viper.BindEnv("username"))
-  helper.Check(viper.BindEnv("password"))
+  helper.Check(viper.BindEnv("API_KEY"))
+  helper.Check(viper.BindEnv("API_SECRET"))
+  helper.Check(viper.BindEnv("USERNAME"))
+  helper.Check(viper.BindEnv("PASSWORD"))
 
   if err := viper.ReadInConfig(); err == nil {
     fmt.Println("Using configuration file: ", viper.ConfigFileUsed())

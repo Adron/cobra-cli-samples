@@ -22,9 +22,9 @@ import (
 // configCmd represents the config command
 var configCmd = &cobra.Command{
 	Use:   "config",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
+	Short: "The 'config' subcommand is for use in management of configuration.",
+	Long: `The 'config' subcommand is for use in management of configuration. It can be used, in combination with the
+other subcommands 'add', 'update', 'view', and 'delete', . For example:
 
 Cobra is a CLI library for Go that empowers applications.
 This application is a tool to generate the needed files

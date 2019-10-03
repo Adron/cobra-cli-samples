@@ -7,6 +7,10 @@ import (
 	"log"
 )
 
+func ConfigKeyValuePairDelete(key string) {
+	// TODO: This obviously needs done.
+}
+
 func ConfigKeyValuePairUpdate(key string, value string) {
 	writeKeyValuePair(key, value)
 }

@@ -24,13 +24,10 @@ import (
 // viewCmd represents the view command
 var viewCmd = &cobra.Command{
 	Use:   "view",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
+	Short: "The 'view' subcommand will provide a list of keys and a map of the values.",
+	Long: `The 'view' subcommand will provide a list of keys and a map of the values. For example:
 
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+'<cmd> config view'`,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("view called")
 		fmt.Println(viper.AllKeys())

@@ -17,7 +17,9 @@ package cmd
 
 import (
 	"fmt"
+	"github.com/Adron/cobra-cli-samples/helper"
 	"github.com/spf13/cobra"
+	"github.com/spf13/viper"
 )
 
 // addCmd represents the add command
@@ -31,15 +33,41 @@ Cobra is a CLI library for Go that empowers applications.
 This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("add called")
-
 		var theKey string
 		theKey, _ = cmd.Flags().GetString("key")
 		var theValue string
 		theValue, _ = cmd.Flags().GetString("value")
 
-		fmt.Printf("Key: %s\nValue: %s\n", theKey, theValue)
+		if len(theKey) == 0 || len(theValue) == 0 {
+			fmt.Println("The key and value must both contain contents to write to the configuration file.")
+			return
+		}
+
+		// Determine if an existing key, if so notify.
+		if findExistingKey(theKey) {
+			fmt.Println("This key already exists. Create a key value pair with a different key, or if this is an update use the update command.")
+			return
+		}
+
+		writeKeyValuePair(theKey, theValue)
 	},
+}
+
+func writeKeyValuePair(key string, value string) {
+	viper.Set(key, value)
+	err := viper.WriteConfig()
+	helper.Check(err)
+	fmt.Printf("Wrote the %s pair.\n", key)
+}
+
+func findExistingKey(theKey string) bool {
+	existingKey := false
+	for i := 0; i < len(viper.AllKeys()); i++ {
+		if viper.AllKeys()[i] == theKey {
+			existingKey = true
+		}
+	}
+	return existingKey
 }
 
 func init() {

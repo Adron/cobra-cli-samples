@@ -19,6 +19,12 @@ Flags:
   -v, --value string   The value for the key value set to add to the configuration.
 ```
 
+## Get Involved, Add Samples, Make Requests
+
+If you'd like to get involved and add samples or make request for additional samples please file an issue [here](https://github.com/Adron/cobra-cli-samples/issues/new?assignees=&labels=&template=feature_request.md&title=)!
+
+If you've found any bugs or issues with the code please file a bug report [here](https://github.com/Adron/cobra-cli-samples/issues/new?assignees=&labels=&template=bug_report.md&title=)!
+
 ### Examples, The CRUD!
 
 `./cli config add -k "blog" -v "https://compositecode.blog/"` example writes a record to the configuration file with a key of "blog" and a value of "https://compositecode.blog/".

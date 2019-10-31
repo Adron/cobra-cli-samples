@@ -2,7 +2,7 @@ package helper
 
 import "fmt"
 
-func Check(e error) {
+func HandleError(e error) {
 	if e != nil {
 		fmt.Println(e)
 	}

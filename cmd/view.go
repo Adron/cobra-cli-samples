@@ -29,9 +29,14 @@ var viewCmd = &cobra.Command{
 
 '<cmd> config view'`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("view called")
-		fmt.Println(viper.AllKeys())
-		fmt.Println(viper.AllSettings())
+		fmt.Printf("** All keys including environment variables for CLI.\n")
+		fmt.Printf("%s\n\n", viper.AllKeys())
+
+		settings := viper.AllSettings()
+		fmt.Printf("** Configuration file keys and values.\n")
+		for i, v := range settings {
+			fmt.Printf("%v: %v\n", i, v)
+		}
 	},
 }
 

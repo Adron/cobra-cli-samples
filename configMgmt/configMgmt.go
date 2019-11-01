@@ -8,21 +8,13 @@ import (
 )
 
 func ConfigKeyValuePairDelete(key string) {
+	//writeKeyValuePair(key, nil)
 
-	settings := viper.AllSettings()
-	fmt.Println(settings)
+	viper.Set(key, nil)
 
-	delete(settings, key)
+	// TODO: This still doesn't work for whatever reason.
 
-	fmt.Println(settings)
-
-	// How to write back the things minus what I just deleted?!?!?!?!
-
-	// No idea how this is supposed to work!?!?! Ugh!
-
-	// TODO: Please submit a PR with this or fix viper or something?!
-
-	helper.HandleError(viper.WriteConfig())
+	_ = viper.WriteConfig()
 }
 
 func ConfigKeyValuePairUpdate(key string, value string) {
@@ -50,7 +42,7 @@ func validateKeyValuePair(key string, value string) bool {
 	return false
 }
 
-func writeKeyValuePair(key string, value string) {
+func writeKeyValuePair(key string, value interface{}) {
 	viper.Set(key, value)
 	err := viper.WriteConfig()
 	helper.HandleError(err)

@@ -9,7 +9,8 @@ This is a CLI App example using the [Cobra](https://github.com/spf13/cobra) and 
 ```
 Available Commands:
   add         The 'add' subcommand will add a passed in key value pair to the application configuration file.
-  delete      The 'delete' subcommand removes a key value pair from the configuration file. 
+  delete      The 'delete' subcommand removes a key value pair from the configuration file. Currently I got this to work
+            but it isn't in the best shape. Check out the code [here](https://github.com/Adron/cobra-cli-samples/blob/master/cmd/delete.go).
   update      The 'update' subcommand will update a passed in key value pair for an existing set of data to the application configuration file.
   view        The 'view' subcommand will provide a list of keys and a map of the values.
 
@@ -33,7 +34,7 @@ If you've found any bugs or issues with the code please file a bug report [here]
 
 `./cli config update -k "blog" -v "not found"` will update the blog entry in the configuration to read `not found` for the value.
 
-`./cli config delete ...` Currently this doens't work as there isn't a working or clear practice around using viper to delete a key value within the configuration.
+`./cli config delete ...` will delete the key and value from the configuration file.
 
 ## Building the Project
 

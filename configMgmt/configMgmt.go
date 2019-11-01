@@ -4,17 +4,25 @@ import (
 	"fmt"
 	"github.com/Adron/cobra-cli-samples/helper"
 	"github.com/spf13/viper"
+	"io/ioutil"
 	"log"
 )
 
 func ConfigKeyValuePairDelete(key string) {
-	//writeKeyValuePair(key, nil)
+	DeleteKeyHack(key)
+}
 
-	viper.Set(key, nil)
+func DeleteKeyHack(key string) {
+	settings := viper.AllSettings()
+	delete(settings, key)
 
-	// TODO: This still doesn't work for whatever reason.
+	var parsedSettings string
+	for key, value := range settings {
+		parsedSettings = fmt.Sprintf("%s\n%s: %s", parsedSettings, key, value)
+	}
 
-	_ = viper.WriteConfig()
+	d1 := []byte(parsedSettings)
+	helper.HandleError(ioutil.WriteFile(viper.ConfigFileUsed(), d1, 0644))
 }
 
 func ConfigKeyValuePairUpdate(key string, value string) {

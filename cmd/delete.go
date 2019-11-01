@@ -18,7 +18,6 @@ package cmd
 import (
 	"fmt"
 	"github.com/Adron/cobra-cli-samples/configMgmt"
-
 	"github.com/spf13/cobra"
 )
 

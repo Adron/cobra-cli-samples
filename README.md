@@ -9,8 +9,7 @@ This is a CLI App example using the [Cobra](https://github.com/spf13/cobra) and 
 ```
 Available Commands:
   add         The 'add' subcommand will add a passed in key value pair to the application configuration file.
-  delete      The 'delete' subcommand removes a key value pair from the configuration file. Currently I got this to work
-            but it isn't in the best shape. Check out the code [here](https://github.com/Adron/cobra-cli-samples/blob/master/cmd/delete.go).
+  delete      The 'delete' subcommand removes a key value pair from the configuration file. 
   update      The 'update' subcommand will update a passed in key value pair for an existing set of data to the application configuration file.
   view        The 'view' subcommand will provide a list of keys and a map of the values.
 
@@ -19,6 +18,8 @@ Flags:
   -k, --key string     The key for the key value set to add to the configuration.
   -v, --value string   The value for the key value set to add to the configuration.
 ```
+
+> Currently I got this to work but it isn't in the best shape. Check out the code [here](https://github.com/Adron/cobra-cli-samples/blob/master/cmd/delete.go).
 
 ## Get Involved, Add Samples, Make Requests
 

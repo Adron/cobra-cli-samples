@@ -1,6 +1,6 @@
 module github.com/Adron/cobra-cli-samples
 
-go 1.19
+go 1.22
 
 require (
 	github.com/spf13/cobra v0.0.5

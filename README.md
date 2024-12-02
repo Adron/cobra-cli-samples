@@ -7,8 +7,8 @@ This is a CLI App example using the [Cobra](https://github.com/spf13/cobra) and 
 `<cli> config -h` provides the following documentation for using this CLI App.
 
 ```
-Available Commands:
-  add         The 'add' subcommand will add a passed in key value pair to the application configuration file.
+Available Commands:  (See examples below for syntax.)
+  add         The 'add' subcommand will add a passed in key value pair to the application configuration file. 
   delete      The 'delete' subcommand removes a key value pair from the configuration file. 
   update      The 'update' subcommand will update a passed in key value pair for an existing set of data to the application configuration file.
   view        The 'view' subcommand will provide a list of keys and a map of the values.
